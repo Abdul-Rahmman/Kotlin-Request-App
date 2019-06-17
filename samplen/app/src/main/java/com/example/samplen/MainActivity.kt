@@ -15,18 +15,21 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-        val intent2 = Intent(this,EmploeyRequest::class.java)
+
 
 
         val imageButton1 = findViewById<ImageButton>(R.id.SignButton)
         imageButton1?.setOnClickListener {
             val intent = Intent(this, MgrLogin::class.java)
             startActivity(intent)
-
         }
 
         val imageButton2 = findViewById<ImageButton>(R.id.EmploeyButton)
-        imageButton2?.setOnClickListener { Toast.makeText(this@MainActivity,"Hi this is test2",Toast.LENGTH_SHORT).show()}
+        imageButton2?.setOnClickListener {
+            val intent = Intent(this,EmploeyRequest::class.java)
+            startActivity(intent)
+
+        }
 
 
 
