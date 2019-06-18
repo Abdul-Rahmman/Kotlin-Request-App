@@ -24,3 +24,6 @@ class MgrLogin : AppCompatActivity() {
 
     }
 }
+
+// run your app  ok   thanks alot    wtf with all of these codes it worked on my phone
+
