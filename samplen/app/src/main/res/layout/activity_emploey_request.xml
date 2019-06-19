@@ -12,18 +12,67 @@
         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                       android:orientation="vertical">
             <TextView
-                    android:text="TextView"
+                    android:text="أدخل اسمك الكامل"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/textView3"/>
+                    android:layout_height="wrap_content" android:id="@+id/Textview"/>
             <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPersonName"
-                    android:text="Name"
+                    android:text="الأسم"
                     android:ems="10"
                     android:id="@+id/editText"/>
+            <TextView
+                    android:text="أدخل رقم الجوال"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/textView"/>
+            <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="phone"
+                    android:ems="10"
+                    android:id="@+id/editText2"/>
+            <TextView
+                    android:text="طلب أجهزة"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/textView2"/>
+            <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                <RadioButton
+                        android:text="كمبيوتر"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:id="@+id/radioButton4" android:layout_weight="1"/>
+                <RadioButton
+                        android:text="لاب توب"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:id="@+id/radioButton2" android:layout_weight="1"/>
+            </RadioGroup>
+            <TextView
+                    android:text="طلب تطبيقات"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/textView3"/>
+            <CheckBox
+                    android:text="سيج"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/checkBox"/>
+            <CheckBox
+                    android:text="ريتيل برو"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/checkBox2"/>
+            <CheckBox
+                    android:text="اوتوكاد"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/checkBox3"/>
+            <TextView
+                    android:text="المدير"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/textView4"/>
+            <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/spinner"/>
             <Button
-                    android:text="Button"
+                    android:text="ارسال"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" android:id="@+id/button"/>
         </LinearLayout>
