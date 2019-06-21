@@ -1,20 +1,17 @@
 package com.example.samplen;
 
-import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class APIClient {
+public class Connector {
 
     private static Retrofit retrofit;
     private static ServiceFace serviceFace;
     private static OkHttpClient okHttpClient;
 
-    private APIClient() {
+    private Connector() {
     }
 
     private static Retrofit getRetrofit(){
@@ -26,7 +23,7 @@ public class APIClient {
         return retrofit = new Retrofit
                 .Builder()
                 .client(okHttpClient)
-                .baseUrl(Config.getURL())
+                .baseUrl(Config.getURL().trim())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -52,5 +49,3 @@ public class APIClient {
         return getRetrofit().create(ServiceFace.class);
     }
 }
-
-
