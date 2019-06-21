@@ -21,16 +21,16 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        val imageButton1 = findViewById<ImageButton>(R.id.SignButton)
-        imageButton1?.setOnClickListener {
-            val intent = Intent(this, MgrLogin::class.java)
-            startActivity(intent)
-        }
-
-        val imageButton2 = findViewById<ImageButton>(R.id.EmploeyButton)
-        imageButton2?.setOnClickListener {
-            val intent = Intent(this,EmploeyRequest::class.java)
-            startActivity(intent)
+//        val imageButton1 = findViewById<ImageButton>(R.id.SignButton)
+//        imageButton1?.setOnClickListener {
+//            val intent = Intent(this, MgrLogin::class.java)
+//            startActivity(intent)
+//        }
+//
+//        val imageButton2 = findViewById<ImageButton>(R.id.EmploeyButton)
+//        imageButton2?.setOnClickListener {
+//            val intent = Intent(this,EmploeyRequest::class.java)
+//            startActivity(intent)
 
         }
 
@@ -40,4 +40,4 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-}
+
