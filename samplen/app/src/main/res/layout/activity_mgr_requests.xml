@@ -6,6 +6,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MgrRequests"
-        android:background="@drawable/bg" android:foregroundTint="@android:color/transparent">
+        android:foregroundTint="@android:color/transparent">
 
 </android.support.constraint.ConstraintLayout>

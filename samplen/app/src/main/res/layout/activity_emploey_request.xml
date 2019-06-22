@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".EmploeyRequest"
-        android:background="@drawable/bg" android:foregroundTint="@android:color/transparent">
+        android:foregroundTint="@android:color/transparent">
     <ScrollView
             android:layout_width="304dp"
             android:layout_height="517dp" tools:layout_editor_absoluteY="8dp" tools:layout_editor_absoluteX="8dp">
@@ -28,7 +28,7 @@
                     android:layout_height="wrap_content"
                     android:inputType="textPersonName"
                     android:ems="10"
-                    android:id="@+id/editText"/>
+                    android:id="@+id/TXTname"/>
             <TextView
                     android:text="أدخل رقم الجوال"
                     android:layout_width="match_parent"
@@ -38,7 +38,7 @@
                     android:layout_height="wrap_content"
                     android:inputType="phone"
                     android:ems="10"
-                    android:id="@+id/editText2"/>
+                    android:id="@+id/TXTPhone"/>
             <TextView
                     android:text="طلب أجهزة"
                     android:layout_width="match_parent"
@@ -79,11 +79,14 @@
             <Spinner
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" android:id="@+id/spinner"/>
+            <!--suppress AndroidMissingOnClickHandler -->
             <ImageButton
                     android:layout_width="175dp"
-                    android:layout_height="66dp" app:srcCompat="@drawable/log" android:id="@+id/send"
+                    android:layout_height="66dp"
+                    android:id="@+id/send"
                     android:scaleType="fitXY"
-                    android:soundEffectsEnabled="true" android:layout_gravity="center"/>
+                    android:soundEffectsEnabled="true" android:layout_gravity="center"
+               />
         </LinearLayout>
     </ScrollView>
 </android.support.constraint.ConstraintLayout>
