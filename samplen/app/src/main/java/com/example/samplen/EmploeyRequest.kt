@@ -1,6 +1,5 @@
 package com.example.samplen
 
-import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
@@ -9,7 +8,6 @@ import android.widget.Toast
 import com.example.samplen.Api.RetrofitClient
 import com.example.samplen.model.SendRespose
 import kotlinx.android.synthetic.main.activity_emploey_request.*
-import kotlinx.android.synthetic.main.activity_mgr_login.*
 
 
 import retrofit2.Call;

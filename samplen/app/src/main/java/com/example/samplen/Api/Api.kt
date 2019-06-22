@@ -2,16 +2,14 @@ package com.example.samplen.Api
 
 
 
-import com.example.samplen.model.DefaultResponse
 import com.example.samplen.model.LoginResponse
 import com.example.samplen.model.MgrRequestsResponse
+import com.example.samplen.model.Request
 import com.example.samplen.model.SendRespose
 import retrofit2.Call
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.POST
-//import simplifiedcoding.net.kotlinretrofittutorial.models.DefaultResponse
-//import simplifiedcoding.net.kotlinretrofittutorial.models.LoginResponse
 
 interface Api {
 
@@ -29,7 +27,7 @@ interface Api {
     @POST("MyRequest")
     fun myReqoust(
         @Field("id") id:String
-    ):Call<MgrRequestsResponse>
+    ):Call<List<Request>>
 
 
     @FormUrlEncoded
@@ -40,11 +38,6 @@ interface Api {
         @Field("body") body: String,
         @Field("Managers_id") id: Int
         ):Call<SendRespose>
-
-
-
-
-
 
 
 

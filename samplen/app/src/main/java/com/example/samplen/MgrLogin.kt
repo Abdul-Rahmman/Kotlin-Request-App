@@ -33,42 +33,34 @@ class MgrLogin : AppCompatActivity() {
              val intent = Intent(this, MgrRequests::class.java)
             startActivity(intent)
 
-
-            val email = Emailtxt.text.toString().trim()
-            val password = Passtxt.text.toString().trim()
-
-
-
-            RetrofitClient.instance.userLogin(email, password)
-                .enqueue(object : Callback<LoginResponse> {
-                    override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
-                        Toast.makeText(applicationContext, t.message, Toast.LENGTH_LONG).show()
-                    }
-
-                    override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
-
-                        if (response.body()!!.States == "Good") {
-
-                            Toast.makeText(
-                                applicationContext,
-                                response.body()!!.States + "you can go",
-                                Toast.LENGTH_LONG
-                            ).show()
-
-                        } else {
-
-                            Toast.makeText(
-                                applicationContext,
-                                response.body()!!.States + "Nooooooooooo♦",
-                                Toast.LENGTH_LONG
-                            ).show()
-
-
-                        }
-
-
-                    }
-                })
+//
+//            val email = Emailtxt.text.toString().trim()
+//            val password = Passtxt.text.toString().trim()
+//
+//
+//
+//            RetrofitClient.instance.userLogin(email, password)
+//                .enqueue(object : Callback<LoginResponse> {
+//                    override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
+//                        Toast.makeText(applicationContext, t.message, Toast.LENGTH_LONG).show()
+//                    }
+//
+//                    override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
+//
+//                        if (response.body()!!.States == "Good") {
+//
+//                            Toast.makeText(applicationContext, response.body()!!.States + "you can go", Toast.LENGTH_LONG).show()
+//
+//                        } else {
+//
+//                            Toast.makeText(applicationContext, response.body()!!.States + "Nooooooooooo♦", Toast.LENGTH_LONG).show()
+//
+//
+//                        }
+//
+//
+//                    }
+//                })
 
 
         }
