@@ -21,14 +21,14 @@
             <TextView
                     android:text="أدخل اسمك الكامل"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/Textview"
+                    android:layout_height="wrap_content"
                     android:gravity="right"/>
             <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPersonName"
                     android:ems="10"
-                    android:id="@+id/editText"/>
+                    android:id="@+id/etext"/>
             <TextView
                     android:text="أدخل رقم الجوال"
                     android:layout_width="match_parent"
@@ -38,14 +38,14 @@
                     android:layout_height="wrap_content"
                     android:inputType="phone"
                     android:ems="10"
-                    android:id="@+id/editText2"/>
+                    android:id="@+id/etext2"/>
             <TextView
                     android:text="طلب أجهزة"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" android:id="@+id/textView2" android:gravity="right"/>
             <RadioGroup
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" android:gravity="right">
+                    android:layout_height="match_parent" android:gravity="right" android:id="@+id/rg">
                 <RadioButton
                         android:text="كمبيوتر"
                         android:layout_width="wrap_content"
@@ -81,7 +81,7 @@
                     android:layout_height="wrap_content" android:id="@+id/spinner"/>
             <ImageButton
                     android:layout_width="175dp"
-                    android:layout_height="66dp" app:srcCompat="@drawable/log" android:id="@+id/send"
+                    android:layout_height="66dp" app:srcCompat="@drawable/send" android:id="@+id/send"
                     android:scaleType="fitXY"
                     android:soundEffectsEnabled="true" android:layout_gravity="center"/>
         </LinearLayout>
