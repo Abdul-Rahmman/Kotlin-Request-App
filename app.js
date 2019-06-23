@@ -85,6 +85,45 @@ app.use(bodyParser.urlencoded({extended:false}));
     });
 
 
+    app.post("/changeRequest",(req,res)=>
+    {
+    
+        console.log(JSON.stringify(req.body));
+    
+        var connection = mysql.createConnection({
+            host     : 'localhost',
+            user     : 'root',
+            password : '',
+            database : 'mn'
+
+
+          });
+          connection.connect();
+          console.log(JSON.stringify(req.body));
+
+          var status = parseInt(req.body.RequestId)
+          var sqlQ = `update  request 
+          SET done =  ${req.body.statusID}
+          where id = ${status}`;
+    console.log(sqlQ);
+    
+          connection.query(sqlQ, function (error, results, fields) {
+            if (error){
+                var loginin={msg:'Eroor'}
+                    res.send(loginin);
+              
+            }else{
+                var loginin={msg:"Reqouest send "}
+                res.send(loginin);
+            }
+           
+          });
+           
+        
+          connection.end();
+    });
+
+
 
 
     app.post("/MyRequest",(req,res)=>
@@ -126,10 +165,9 @@ app.use(bodyParser.urlencoded({extended:false}));
 
 
 
-    app.post("/Managers",(req,res)=>
+    app.get("/Managers",(req,res)=>
     {
     
-        console.log(JSON.stringify(req.body));
     
         var connection = mysql.createConnection({
             host     : 'localhost',
@@ -140,7 +178,7 @@ app.use(bodyParser.urlencoded({extended:false}));
 
           });
           connection.connect();
-          console.log(JSON.stringify(req.body));
+
 
 
           var sqlQ = `SELECT * FROM managers`;
