@@ -3,16 +3,8 @@ package com.example.samplen
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.WindowManager
 import android.widget.ImageButton
-import android.widget.Toast
-import com.example.samplen.CallBack.ConnectionCallBack
-import com.example.samplen.model.Message
-import kotlinx.android.synthetic.main.activity_mgr_login.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class MainActivity : AppCompatActivity()  {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -4,13 +4,17 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
+import com.example.samplen.Api.RetrofitClient
 import com.example.samplen.R
+import com.example.samplen.model.DefaultResponse
 import com.example.samplen.model.Request
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
-/**
- * Created by Belal on 6/19/2017.
- */
 
 class CustomAdapter(val RequestList: ArrayList<Request>) : RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
 
@@ -38,6 +42,39 @@ class CustomAdapter(val RequestList: ArrayList<Request>) : RecyclerView.Adapter<
             val textViewAddress  = itemView.findViewById(R.id.textViewAddress) as TextView
             textViewName.text = Requests.name
             textViewAddress.text = Requests.body
+            itemView.findViewById<Button>(R.id.approval).setOnClickListener{
+                RetrofitClient.instance.changeRequest(Requests.id, "1")
+                    .enqueue(object : Callback<DefaultResponse> {
+                        override fun onFailure(call: Call<DefaultResponse>, t: Throwable) {
+
+                        }
+                        override fun onResponse(call: Call<DefaultResponse>, response: Response<DefaultResponse>) {
+                            Toast.makeText(
+                                itemView.context,
+                                "approved",
+                                Toast.LENGTH_LONG
+                            ).show()
+
+                        }
+                    })
+            }
+            itemView.findViewById<Button>(R.id.reject).setOnClickListener{
+                RetrofitClient.instance.changeRequest(Requests.id, "2")
+                    .enqueue(object : Callback<DefaultResponse> {
+                        override fun onFailure(call: Call<DefaultResponse>, t: Throwable) {
+                        }
+                        override fun onResponse(call: Call<DefaultResponse>, response: Response<DefaultResponse>) {
+                            Toast.makeText(
+                                itemView.context,
+                                "Rejected",
+                                Toast.LENGTH_LONG
+                            ).show()
+
+                        }
+                    })
+            }
+
+
+            }
         }
     }
-}

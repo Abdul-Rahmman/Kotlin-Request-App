@@ -48,12 +48,12 @@ class MgrLogin : AppCompatActivity() {
 
                         if (response.body()!!.States == "Good") {
 
-                            Toast.makeText(applicationContext, response.body()!!.States + "you can go", Toast.LENGTH_LONG).show()
+
 
 //                            //pass the valurr
 //
-//                            intent.putExtra("id",  response.body()!!.id)
-//                            startActivity(intent)
+                            intent.putExtra("id",  response.body()!!.id)
+                            startActivity(intent)
 
 
 

@@ -1,12 +1,10 @@
 
 package com.example.samplen.Api;
-import com.example.samplen.model.LoginResponse
-import com.example.samplen.model.MgrRequestsResponse
-import com.example.samplen.model.Request
-import com.example.samplen.model.SendRespose
+import com.example.samplen.model.*
 import retrofit2.Call
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
+import retrofit2.http.GET
 import retrofit2.http.POST
 
 interface Api {
@@ -21,12 +19,21 @@ interface Api {
 
 
 
+    @GET("Managers")
+    fun Managers():Call<List<Manager>>
+
     @FormUrlEncoded
     @POST("MyRequest")
     fun myReqoust(
         @Field("id") id:String
     ):Call<ArrayList<Request>>
 
+    @FormUrlEncoded
+    @POST("changeRequest")
+    fun changeRequest(
+        @Field("RequestId") id:String,
+        @Field("statusID") statusID:String
+    ):Call<DefaultResponse>
 
     @FormUrlEncoded
     @POST("Request")

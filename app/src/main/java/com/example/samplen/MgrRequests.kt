@@ -1,5 +1,6 @@
 package com.example.samplen
 
+import android.content.Intent
 import com.example.samplen.Api.RetrofitClient
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -29,6 +30,7 @@ class MgrRequests : AppCompatActivity() {
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN)
 
+        var myintent = intent
 
         //getting recyclerview from xml
         val recyclerView = findViewById(R.id.recyclerView) as RecyclerView
@@ -37,22 +39,15 @@ class MgrRequests : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this, LinearLayout.VERTICAL, false)
 
 
+        var id = myintent.getIntExtra("id",-1)
 
-
-        RetrofitClient.instance.myReqoust("1")
+        RetrofitClient.instance.myReqoust(id.toString())
             .enqueue(object : Callback<ArrayList<Request>> {
                 override fun onFailure(call: Call<ArrayList<Request>>, t: Throwable) {
                     Toast.makeText(applicationContext, t.message, Toast.LENGTH_LONG).show()
                 }
 
                 override fun onResponse(call: Call<ArrayList<Request>>, response: Response<ArrayList<Request>>) {
-                    Toast.makeText(
-                        applicationContext,
-                        response.body()!!.toString(),
-                        Toast.LENGTH_LONG
-                    ).show()
-
-
 
                     val adapter = CustomAdapter( response.body()!!)
                     recyclerView.adapter = adapter
